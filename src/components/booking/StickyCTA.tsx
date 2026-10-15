@@ -38,8 +38,8 @@ export default function StickyCTA() {
       aria-label="Mobile quick actions"
       className="fixed bottom-0 left-0 right-0 md:hidden z-40 border-t backdrop-blur-md px-3 py-2.5 shadow-2xl"
       style={{
-        backgroundColor: 'rgba(245, 246, 240, 0.96)',
-        borderColor: `${PRIMARY}20`,
+        backgroundColor: 'rgba(255, 255, 255, 0.96)',
+        borderColor: `${PRIMARY}18`,
       }}
     >
       <div className="flex items-center gap-2 max-w-md mx-auto">
@@ -51,7 +51,7 @@ export default function StickyCTA() {
             backgroundColor: `${PRIMARY}12`,
             color: PRIMARY,
           }}
-          title="Call clinic"
+          title="Call technician"
         >
           <Phone size={16} />
           <span>Call</span>
@@ -79,7 +79,7 @@ export default function StickyCTA() {
             backgroundColor: ACCENT,
             color: BG,
           }}
-          title="Book appointment"
+          title="Book repair"
         >
           <Calendar size={16} />
           <span>Book</span>

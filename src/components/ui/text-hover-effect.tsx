@@ -32,7 +32,9 @@ export function TextHoverEffect({ text, className = '' }: TextHoverEffectProps) 
     const pointerInside = useRef(false);
     const swept = useRef(false);
 
-    const [vb, setVb] = useState<ViewBox>(FALLBACK);
+    // Dynamic initial viewBox based on string length to prevent clipping before measurement
+    const initialWidth = Math.max(text.length * 56, 440);
+    const [vb, setVb] = useState<ViewBox>({ x: 0, y: 15, w: initialWidth, h: 105 });
     const [ready, setReady] = useState(false);
     const [hovered, setHovered] = useState(false);
     // Spotlight position as a fraction of the viewBox, so it survives resizes.
@@ -60,12 +62,14 @@ export function TextHoverEffect({ text, className = '' }: TextHoverEffectProps) 
                 ctx.letterSpacing = `${TRACKING_EM * FONT_SIZE}px`;
                 const m = ctx.measureText(text);
                 const w = m.actualBoundingBoxLeft + m.actualBoundingBoxRight;
-                if (w > 0) {
+                if (w > 0 && Number.isFinite(m.actualBoundingBoxAscent)) {
+                    const padY = 6;
+                    const padX = 4;
                     setVb({
-                        x: -m.actualBoundingBoxLeft,
-                        y: BASELINE - m.actualBoundingBoxAscent,
-                        w,
-                        h: m.actualBoundingBoxAscent + m.actualBoundingBoxDescent,
+                        x: -m.actualBoundingBoxLeft - padX,
+                        y: BASELINE - m.actualBoundingBoxAscent - padY,
+                        w: w + padX * 2,
+                        h: m.actualBoundingBoxAscent + (m.actualBoundingBoxDescent || 20) + padY * 2,
                     });
                     setReady(true);
                     return;
@@ -77,7 +81,13 @@ export function TextHoverEffect({ text, className = '' }: TextHoverEffectProps) 
 
         const box = textRef.current?.getBBox();
         if (box && box.width) {
-            setVb({ x: box.x, y: BASELINE - 0.76 * FONT_SIZE, w: box.width, h: 0.78 * FONT_SIZE });
+            const padY = 6;
+            setVb({
+                x: box.x - 2,
+                y: box.y - padY,
+                w: box.width + 4,
+                h: box.height + padY * 2,
+            });
             setReady(true);
         }
     }, [text]);

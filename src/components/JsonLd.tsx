@@ -105,7 +105,7 @@ export default function JsonLd() {
         url: seo.siteUrl,
         name: `${brand.name} | ${brand.tagline}`,
         isPartOf: { '@id': `${seo.siteUrl}/#website` },
-        about: { '@id': `${seo.siteUrl}/#clinic` },
+        about: { '@id': `${seo.siteUrl}/#business` },
         description: seo.metaDescription,
         inLanguage: 'en-IN',
       },

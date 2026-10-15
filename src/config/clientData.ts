@@ -231,6 +231,8 @@ export const clientData = {
     {
       id: 1,
       name: "Rohit Verma",
+      role: "Verified Homeowner",
+      location: "Sector 85, Gurugram",
       text: "Prompt same-day doorstep service in Sector 85! The technician identified why our front-load washing machine was vibrating heavily and fixed it with genuine parts.",
       rating: 5,
       source: "Google",
@@ -238,6 +240,8 @@ export const clientData = {
     {
       id: 2,
       name: "Pooja Sharma",
+      role: "Verified Homeowner",
+      location: "Gurugram",
       text: "Our microwave oven stopped heating suddenly. Nikunj Wash Care sent an experienced technician within hours. Affordable price, genuine parts, and very courteous service.",
       rating: 5,
       source: "Google",
@@ -245,6 +249,8 @@ export const clientData = {
     {
       id: 3,
       name: "Amit Yadav",
+      role: "Verified Homeowner",
+      location: "Sector 86, Gurugram",
       text: "Reliable and honest appliance repair in Gurugram. Explained the fault clearly without inflating repair costs. Definitely recommended for washing machine and microwave repairs.",
       rating: 5,
       source: "Google",

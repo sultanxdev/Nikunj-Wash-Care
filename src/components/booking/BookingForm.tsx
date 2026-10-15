@@ -22,7 +22,7 @@ const bookingSchema = z.object({
     .regex(/^[0-9+\-\s()]{10,}$/, "Please enter a valid phone number"),
   
   treatment: z.string()
-    .min(1, "Please select a treatment"),
+    .min(1, "Please select an appliance or repair service"),
   
   preferredDate: z.string().optional(),
   preferredTime: z.string().optional(),
@@ -306,7 +306,7 @@ export default function BookingForm() {
         </button>
 
         <p className="text-center text-xs mt-3" style={{ color: `${PRIMARY}80` }}>
-          🔒 Your details are secure and directly shared with our clinical team.
+          🔒 Your details are secure and shared directly with our doorstep repair team.
         </p>
       </form>
     </div>
