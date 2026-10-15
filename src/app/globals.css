@@ -8,13 +8,17 @@
   --color-brand-textMain: var(--textMain);
   --color-brand-textMuted: var(--textMuted);
 
-  --font-sans: var(--font-mono), 'Geist Mono', monospace;
-  --font-serif: var(--font-mono), 'Geist Mono', monospace;
-  --font-mono: var(--font-mono), 'Geist Mono', monospace;
+  --font-sans: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: var(--font-inter), 'Inter', sans-serif;
 }
 
 /* ─── Brand Palette ───────────────────────────────────────── */
 :root {
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-inter);
+  --font-mono: var(--font-inter);
   --primary: #0F3D5E;
   --primaryHover: #0A2940;
   --accent: #E05638;
@@ -40,10 +44,27 @@ html {
   width: 100%;
 }
 
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+button,
+input,
+textarea,
+select,
+label {
+  font-family: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
 body {
   background-color: var(--background);
   color: var(--textMain);
-  font-family: var(--font-mono), 'Geist Mono', monospace;
   overflow-x: clip;
   width: 100%;
   position: relative;

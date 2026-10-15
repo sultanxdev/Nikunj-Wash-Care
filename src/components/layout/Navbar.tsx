@@ -57,7 +57,7 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <Link
               href="/"
-              className="font-mono text-lg sm:text-xl font-bold tracking-tight"
+              className="font-sans text-lg sm:text-xl font-bold tracking-tight"
               style={{ color: GREEN }}
             >
               {clientData.brand.logoText}

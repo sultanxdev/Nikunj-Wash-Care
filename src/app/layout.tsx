@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { clientData } from "@/config/clientData";
 import ThemeProvider from "@/components/ThemeProvider";
@@ -9,18 +9,9 @@ import StickyCTA from "@/components/booking/StickyCTA";
 import FloatingWhatsApp from "@/components/whatsapp/FloatingWhatsApp";
 
 const inter = Inter({
-  variable: "--font-sans",
+  variable: "--font-inter",
   subsets: ["latin"],
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-serif",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 const { seo, brand, contact } = clientData;
@@ -143,10 +134,10 @@ export default function RootLayout({
         )}
       </head>
       <body
-        className={`${geistMono.variable} ${inter.variable} ${playfair.variable} ${clientData.typography.className} antialiased`}
+        className={`${inter.variable} ${inter.className} font-sans antialiased`}
         style={{
           backgroundColor: clientData.colors.background,
-          fontFamily: clientData.typography.fontFamily,
+          fontFamily: "var(--font-inter), 'Inter', sans-serif",
         }}
       >
         <ThemeProvider>

@@ -117,12 +117,12 @@ export default function BookingForm() {
     <div className="w-full p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl">
       <div className="mb-6 sm:mb-8">
         <span
-          className="inline-block text-xs font-mono font-semibold uppercase tracking-widest px-2.5 py-1 rounded-md mb-2"
+          className="inline-block text-xs font-sans font-semibold uppercase tracking-widest px-2.5 py-1 rounded-md mb-2"
           style={{ backgroundColor: `${PRIMARY}10`, color: ACCENT }}
         >
           Instant Confirmation
         </span>
-        <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight" style={{ color: PRIMARY }}>
+        <h3 className="font-sans text-2xl sm:text-3xl font-bold tracking-tight" style={{ color: PRIMARY }}>
           {booking?.formTitle || appointment?.formTitle || "Book an Appointment"}
         </h3>
         <p className="mt-1 text-sm sm:text-base leading-relaxed" style={{ color: `${PRIMARY}99` }}>

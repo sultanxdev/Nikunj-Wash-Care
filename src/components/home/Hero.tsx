@@ -81,7 +81,7 @@ export default function Hero() {
 
           <motion.h1
             variants={item}
-            className="mt-6 font-serif text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-[4.25rem]"
+            className="mt-6 font-sans text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-[4.25rem]"
             style={{ color: GREEN }}
           >
             {hero.headline}

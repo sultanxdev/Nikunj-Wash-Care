@@ -64,7 +64,7 @@ export default function Services() {
               Our Services
             </span>
             <h2
-              className="mt-4 font-serif text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl"
+              className="mt-4 font-sans text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl"
               style={{ color: GREEN }}
             >
               Reliable Appliance Repair Services
@@ -125,7 +125,7 @@ export default function Services() {
                     </span>
 
                     <h3
-                      className="font-serif text-xl font-bold leading-tight sm:text-2xl"
+                      className="font-sans text-xl font-bold leading-tight sm:text-2xl"
                       style={{ color: GREEN }}
                     >
                       {service.title}

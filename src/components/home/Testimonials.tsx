@@ -46,7 +46,7 @@ export default function Testimonials() {
             transition={{ duration: 0.6, ease: EASE }}
           >
             <span
-              className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-mono font-medium tracking-wider uppercase mb-4"
+              className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-sans font-medium tracking-wider uppercase mb-4"
               style={{ backgroundColor: 'rgba(245, 246, 240, 0.15)', color: CREAM }}
             >
               <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: RED }} />
@@ -54,7 +54,7 @@ export default function Testimonials() {
             </span>
 
             <h2
-              className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4"
+              className="font-sans text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4"
               style={{ color: CREAM }}
             >
               What our customers say

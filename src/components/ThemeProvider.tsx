@@ -16,6 +16,10 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
     root.style.setProperty('--background', colors.background);
     root.style.setProperty('--textMain', colors.textMain);
     root.style.setProperty('--textMuted', colors.textMuted);
+
+    if (clientData.typography?.fontFamily) {
+      root.style.setProperty('--font-inter', clientData.typography.fontFamily);
+    }
   }, []);
 
   return <>{children}</>;

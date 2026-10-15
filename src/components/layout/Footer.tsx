@@ -29,7 +29,7 @@ export default function Footer() {
           {/* Brand Info (5 cols) */}
           <div className="lg:col-span-5 flex flex-col space-y-4">
             <div className="flex items-center gap-2">
-              <span className="font-mono text-2xl font-bold tracking-tight" style={{ color: PRIMARY }}>
+              <span className="font-sans text-2xl font-bold tracking-tight" style={{ color: PRIMARY }}>
                 {brand.logoText}
               </span>
               <span className="h-2 w-2 rounded-full" style={{ backgroundColor: ACCENT }} />
@@ -124,7 +124,7 @@ export default function Footer() {
 
           {/* Quick Navigation (2 cols) */}
           <div className="lg:col-span-2 flex flex-col space-y-3">
-            <h3 className="font-mono text-xs uppercase tracking-widest font-semibold" style={{ color: PRIMARY }}>
+            <h3 className="font-sans text-xs uppercase tracking-widest font-semibold" style={{ color: PRIMARY }}>
               Navigation
             </h3>
             <ul className="space-y-2.5 text-sm" style={{ color: `${PRIMARY}CC` }}>
@@ -150,7 +150,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="#contact" className="transition-colors hover:text-[#E64435]">
-                  Book Consultation
+                  Book a Repair
                 </Link>
               </li>
             </ul>
@@ -158,8 +158,8 @@ export default function Footer() {
 
           {/* Treatments (2 cols) */}
           <div className="lg:col-span-2 flex flex-col space-y-3">
-            <h3 className="font-mono text-xs uppercase tracking-widest font-semibold" style={{ color: PRIMARY }}>
-              Treatments
+            <h3 className="font-sans text-xs uppercase tracking-widest font-semibold" style={{ color: PRIMARY }}>
+              Services
             </h3>
             <ul className="space-y-2.5 text-sm" style={{ color: `${PRIMARY}CC` }}>
               {services.slice(0, 5).map((srv) => (
@@ -174,8 +174,8 @@ export default function Footer() {
 
           {/* Clinic Hours & Contact (3 cols) */}
           <div className="lg:col-span-3 flex flex-col space-y-3">
-            <h3 className="font-mono text-xs uppercase tracking-widest font-semibold" style={{ color: PRIMARY }}>
-              Clinic Visit
+            <h3 className="font-sans text-xs uppercase tracking-widest font-semibold" style={{ color: PRIMARY }}>
+              Doorstep Service
             </h3>
             <div className="space-y-3 text-sm" style={{ color: `${PRIMARY}CC` }}>
               <div className="flex items-start gap-2.5">

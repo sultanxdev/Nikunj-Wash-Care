@@ -64,7 +64,7 @@ export default function AboutDoctor() {
                 className="absolute -bottom-6 right-2 sm:right-4 max-w-[16rem] rounded-2xl bg-white px-5 py-4 shadow-xl"
                 style={{ border: '1px solid rgba(75, 98, 74, 0.06)' }}
               >
-                {name && <p className="font-serif text-lg font-bold" style={{ color: GREEN }}>{name}</p>}
+                {name && <p className="font-sans text-lg font-bold" style={{ color: GREEN }}>{name}</p>}
                 {role && <p className="text-sm" style={{ color: `${GREEN}99` }}>{role}</p>}
               </div>
             )}
@@ -84,7 +84,7 @@ export default function AboutDoctor() {
 
           <motion.h2
             {...reveal(0.08)}
-            className="mt-4 font-serif text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl"
+            className="mt-4 font-sans text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl"
             style={{ color: GREEN }}
           >
             {heading}
@@ -106,7 +106,7 @@ export default function AboutDoctor() {
 
           <motion.p
             {...reveal(0.15)}
-            className="mt-8 max-w-xl font-serif text-lg leading-relaxed sm:text-xl md:text-2xl md:leading-relaxed"
+            className="mt-8 max-w-xl font-sans text-lg leading-relaxed sm:text-xl md:text-2xl md:leading-relaxed"
             style={{ color: GREEN }}
           >
             {lead}
@@ -126,7 +126,7 @@ export default function AboutDoctor() {
             >
               {highlights.slice(0, 3).map((h) => (
                 <div key={h.label} className="px-4 first:pl-0" style={{ borderColor: `${GREEN}25` }}>
-                  <dd className="font-serif text-2xl font-bold sm:text-3xl" style={{ color: RED }}>
+                  <dd className="font-sans text-2xl font-bold sm:text-3xl" style={{ color: RED }}>
                     {h.value}
                   </dd>
                   <dt className="mt-1 text-xs leading-snug sm:text-sm" style={{ color: `${GREEN}99` }}>{h.label}</dt>
@@ -148,7 +148,7 @@ export default function AboutDoctor() {
               {ctaText}
             </a>
             {name && (
-              <p className="font-serif text-lg italic sm:text-xl" style={{ color: `${GREEN}80` }}>{name}</p>
+              <p className="font-sans text-lg italic sm:text-xl" style={{ color: `${GREEN}80` }}>{name}</p>
             )}
           </motion.div>
         </div>

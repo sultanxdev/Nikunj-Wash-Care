@@ -99,7 +99,7 @@ export default function Contact() {
           >
             <motion.div variants={row}>
               <span
-                className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-mono font-medium tracking-wider uppercase mb-4"
+                className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-sans font-medium tracking-wider uppercase mb-4"
                 style={{
                   backgroundColor: `${PRIMARY}10`,
                   color: ACCENT,
@@ -112,7 +112,7 @@ export default function Contact() {
 
             <motion.h2
               variants={row}
-              className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.12] tracking-tight"
+              className="font-sans text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.12] tracking-tight"
               style={{ color: PRIMARY }}
             >
               Reliable Repair at Your Doorstep

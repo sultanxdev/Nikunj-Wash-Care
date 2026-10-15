@@ -38,7 +38,7 @@ export default function Faq() {
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase mb-4"
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase mb-4"
             style={{
               backgroundColor: `${PRIMARY}10`,
               color: ACCENT,
@@ -48,7 +48,7 @@ export default function Faq() {
             Common Questions
           </div>
           <h2
-            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4"
+            className="font-sans text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4"
             style={{ color: PRIMARY }}
           >
             Frequently Asked Questions

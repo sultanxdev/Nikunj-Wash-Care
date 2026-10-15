@@ -299,9 +299,9 @@ export const clientData = {
 
   // ── 15. TYPOGRAPHY ──────────────────────────────────────────
   typography: {
-    fontName: "Geist Mono",
-    fontFamily: "var(--font-mono), 'Geist Mono', monospace",
-    googleFontUrl: "https://fonts.google.com/specimen/Geist+Mono",
-    className: "font-mono",
+    fontName: "Inter",
+    fontFamily: "var(--font-inter), 'Inter', sans-serif",
+    googleFontUrl: "https://fonts.google.com/specimen/Inter",
+    className: "font-sans",
   },
 };
