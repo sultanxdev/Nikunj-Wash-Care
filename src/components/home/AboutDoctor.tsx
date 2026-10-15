@@ -39,23 +39,17 @@ export default function AboutDoctor() {
         style={{ backgroundColor: GREEN }}
       />
 
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 sm:gap-16 lg:grid-cols-12 lg:gap-12">
-        {/* Portrait */}
+      <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-12 sm:gap-16 lg:grid-cols-12 lg:gap-12">
+        {/* Visual / Image */}
         <motion.div {...reveal()} className="relative mx-auto w-full max-w-md lg:col-span-5 lg:max-w-none">
-          <div className="relative mx-auto w-[88%] max-w-[440px] lg:ml-0 lg:mr-auto">
+          <div className="relative mx-auto w-[90%] max-w-[420px] lg:ml-0 lg:mr-auto">
             <div
-              aria-hidden
-              className="absolute inset-0 -translate-x-4 translate-y-4 rounded-[2.5rem] rounded-tl-[999px] border-2"
-              style={{ borderColor: GREEN }}
-            />
-            <div
-              className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] rounded-tl-[999px] shadow-2xl"
-              style={{ boxShadow: `0 25px 60px -12px rgba(75, 98, 74, 0.25)` }}
+              className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-black/[0.08] bg-white p-2 shadow-[0_20px_50px_rgba(15,61,94,0.12)]"
             >
               <img
                 src={imageUrl}
                 alt={name ? `${name} - Appliance Repair` : 'Nikunj Wash Care Technician'}
-                className="h-full w-full object-cover object-top"
+                className="h-full w-full rounded-2xl object-cover object-center"
               />
             </div>
 

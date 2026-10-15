@@ -39,7 +39,7 @@ export default function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-3 left-1/2 -translate-x-1/2 w-[94%] sm:w-[95%] max-w-7xl z-50 rounded-2xl transition-all duration-500 ${
+      className={`fixed top-3 left-1/2 -translate-x-1/2 w-[94%] sm:w-[95%] max-w-[1200px] z-50 rounded-2xl transition-all duration-500 ${
         isScrolled
           ? 'py-2 sm:py-2.5 shadow-lg'
           : 'py-3 sm:py-3.5 shadow-md'

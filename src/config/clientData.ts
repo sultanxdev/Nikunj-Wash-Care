@@ -66,8 +66,7 @@ export const clientData = {
       { value: "Genuine", label: "Spare Parts" },
     ],
     ctaText: "Book a Repair",
-    imageUrl:
-      "https://images.openai.com/static-rsc-4/TvdBoy1sABPXlFk0N6LJhWg-qux-PPX1Dw08gw9ob6Yg1mF4RR2wQGWiEoZ7cXycYP09mJsh2wYH1UecVssKAa5ZVz8UFEJ9hlKqgXlliJRRefUDUfil8rboUBuAXjX5LEsYtHZusQT2OFgocc87VbCg5fLua2T0JVDX9p87PSE?purpose=inline",
+    imageUrl: "/washing-machine-poster.jpg",
   },
 
   // ── 4. CONTACT & LOCATION DETAILS ──────────────────────────
@@ -120,12 +119,11 @@ export const clientData = {
   hero: {
     headline: "Reliable Washing Machine & Microwave Repair at Your Doorstep",
     subheadline:
-      "Looking for washing machine or microwave repair in Gurugram? Contact Nikunj Wash Care for appliance repair assistance and doorstep service.",
+      "Expert doorstep appliance repair across Sector 85 and Gurugram. Fast fault diagnosis, 100% genuine parts, and transparent pricing for all major brands.",
     ctaText: "Call Now",
     secondaryCtaText: "WhatsApp for Service",
     bookCtaText: "Book a Repair",
-    imageUrl:
-      "https://images.openai.com/static-rsc-4/TvdBoy1sABPXlFk0N6LJhWg-qux-PPX1Dw08gw9ob6Yg1mF4RR2wQGWiEoZ7cXycYP09mJsh2wYH1UecVssKAa5ZVz8UFEJ9hlKqgXlliJRRefUDUfil8rboUBuAXjX5LEsYtHZusQT2OFgocc87VbCg5fLua2T0JVDX9p87PSE?purpose=inline",
+    imageUrl: "/hero-appliances.jpg",
     badge: "Doorstep Service • Sector 85, Gurugram",
     rating: 4.9,
     patientCount: "1,500+ satisfied homeowners",

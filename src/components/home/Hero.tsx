@@ -2,246 +2,203 @@
 
 import React from 'react';
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
+import { Phone, ShieldCheck, Clock, Star, Wrench, CheckCircle2 } from 'lucide-react';
 import { clientData } from '@/config/clientData';
 
 export default function Hero() {
   const reduce = useReducedMotion();
   const { brand, hero, colors } = clientData;
-  const phone = clientData.contact?.phone;
+  const phone = clientData.contact?.phone || '+91 73577 64559';
 
-  const GREEN = colors.primary;
-  const CREAM = colors.background;
-  const RED = colors.accent;
+  const PRIMARY = colors.primary;
+  const BG = colors.background;
 
   const easeCubic: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
   const container: Variants = {
     hidden: {},
-    show: { transition: { staggerChildren: reduce ? 0 : 0.12, delayChildren: 0.1 } },
+    show: { transition: { staggerChildren: reduce ? 0 : 0.08, delayChildren: 0.05 } },
   };
+
   const item: Variants = {
-    hidden: { opacity: 0, y: reduce ? 0 : 18 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easeCubic } },
+    hidden: { opacity: 0, y: reduce ? 0 : 16 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeCubic } },
   };
 
   return (
     <section
-      className="relative overflow-hidden pt-28 pb-16 lg:pt-32 lg:pb-24"
-      style={{ backgroundColor: CREAM }}
+      className="relative overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-24"
+      style={{ backgroundColor: BG }}
     >
-      {/* Soft background shapes */}
+      {/* Subtle modern ambient background */}
       <div
         aria-hidden
-        className="absolute -top-24 -left-24 h-72 w-72 rounded-full opacity-30 blur-3xl"
-        style={{ backgroundColor: GREEN }}
+        className="pointer-events-none absolute -top-32 -left-20 h-96 w-96 rounded-full opacity-15 blur-3xl"
+        style={{ backgroundColor: PRIMARY }}
       />
       <div
         aria-hidden
-        className="absolute bottom-0 right-0 h-96 w-96 translate-x-1/3 translate-y-1/3 rounded-full opacity-15 blur-3xl"
-        style={{ backgroundColor: RED }}
-      />
-      <div
-        aria-hidden
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full opacity-[0.04] blur-3xl"
-        style={{ backgroundColor: GREEN }}
+        className="pointer-events-none absolute top-1/2 -right-24 h-96 w-96 rounded-full opacity-10 blur-3xl"
+        style={{ backgroundColor: '#E05638' }}
       />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14 px-4 sm:px-6 lg:min-h-[calc(100vh-8rem)] lg:grid-cols-12 lg:gap-8 lg:px-8">
-        {/* Left: words */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="flex flex-col lg:col-span-6"
-        >
-          <motion.div variants={item}>
-            <span
-              className="inline-flex items-center gap-2.5 rounded-full py-2 pl-3 pr-4 text-sm font-medium shadow-sm"
-              style={{
-                backgroundColor: 'rgba(75, 98, 74, 0.08)',
-                color: GREEN,
-                border: '1px solid rgba(75, 98, 74, 0.1)',
-              }}
-            >
-              <span className="relative flex h-2.5 w-2.5">
-                {!reduce && (
-                  <span
-                    className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-60"
-                    style={{ backgroundColor: RED }}
-                  />
-                )}
-                <span
-                  className="relative inline-flex h-2.5 w-2.5 rounded-full"
-                  style={{ backgroundColor: RED }}
-                />
-              </span>
-              {hero.badge || `${brand.name} is welcoming new patients`}
-            </span>
-          </motion.div>
-
-          <motion.h1
-            variants={item}
-            className="mt-6 font-sans text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-[4.25rem]"
-            style={{ color: GREEN }}
+      {/* Aligned with Navbar & Bento Width: max-w-[1200px] */}
+      <div className="relative z-10 mx-auto max-w-[1200px] px-4 sm:px-6">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
+          
+          {/* ========================================================= */}
+          {/* LEFT: Clean, High-Impact Value Proposition                */}
+          {/* ========================================================= */}
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="flex flex-col lg:col-span-7"
           >
-            {hero.headline}
-          </motion.h1>
-
-          <motion.p
-            variants={item}
-            className="mt-6 max-w-xl text-lg leading-relaxed md:text-xl"
-            style={{ color: `${GREEN}CC` }}
-          >
-            {hero.subheadline}
-          </motion.p>
-
-          <motion.div variants={item} className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a
-              href={`tel:${phone?.replace(/\s/g, '') || ''}`}
-              className="rounded-xl px-7 py-4 text-center text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 flex items-center justify-center gap-2.5"
-              style={{
-                backgroundColor: GREEN,
-                color: CREAM,
-                outlineColor: GREEN,
-              }}
-            >
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
-              </svg>
-              {hero.ctaText || "Call Now"}
-            </a>
-
-            <a
-              href={`https://wa.me/${clientData.contact.whatsappNumber}?text=${encodeURIComponent("Hi Nikunj Wash Care, I would like to inquire about washing machine / microwave repair service.")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl px-6 py-4 text-center text-lg font-semibold shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow flex items-center justify-center gap-2.5"
-              style={{
-                backgroundColor: 'white',
-                color: GREEN,
-                border: '1px solid rgba(15, 61, 94, 0.15)',
-                outlineColor: GREEN,
-              }}
-            >
-              <svg viewBox="0 0 24 24" className="h-5 w-5 text-emerald-600" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
-                <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
-              </svg>
-              {hero.secondaryCtaText || "WhatsApp for Service"}
-            </a>
-
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center py-2 text-base font-semibold underline-offset-4 hover:underline"
-              style={{ color: RED }}
-            >
-              {hero.bookCtaText || "Book a Repair"} →
-            </a>
-          </motion.div>
-
-          {/* Social proof */}
-          {(hero.rating || hero.patientCount) && (
-            <motion.div variants={item} className="mt-10 flex items-center gap-4">
-              <div className="leading-tight">
-                {hero.rating && (
-                  <div className="flex items-center gap-1.5">
-                    <span className="flex" aria-hidden>
-                      {[0, 1, 2, 3, 4].map((s) => (
-                        <svg key={s} viewBox="0 0 20 20" className="h-4 w-4" fill={RED}>
-                          <path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9 4.8 17.7l1-5.9L1.5 7.7l5.9-.8L10 1.5z" />
-                        </svg>
-                      ))}
-                    </span>
-                    <span className="text-sm font-semibold" style={{ color: GREEN }}>
-                      {hero.rating}
-                    </span>
-                  </div>
-                )}
-                {hero.patientCount && (
-                  <p className="text-sm" style={{ color: `${GREEN}99` }}>{hero.patientCount}</p>
-                )}
+            {/* Elegant Location Badge */}
+            <motion.div variants={item}>
+              <div className="inline-flex items-center gap-2 rounded-full border border-black/[0.08] bg-white/95 px-3.5 py-1.5 text-xs font-medium text-zinc-800 shadow-2xs backdrop-blur-md">
+                <span className="relative flex size-2">
+                  {!reduce && (
+                    <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                  )}
+                  <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+                </span>
+                <span>Sector 85, Gurugram • Doorstep Service</span>
               </div>
             </motion.div>
-          )}
 
-          {/* Key Selling Points from Posters */}
-          {clientData.sellingPoints && clientData.sellingPoints.length > 0 && (
-            <motion.div variants={item} className="mt-8 flex flex-wrap gap-2">
-              {clientData.sellingPoints.map((point: string, i: number) => (
-                <span
-                  key={i}
-                  className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium shadow-xs backdrop-blur-xs"
-                  style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.85)',
-                    color: GREEN,
-                    border: '1px solid rgba(15, 61, 94, 0.12)',
-                  }}
-                >
-                  <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ backgroundColor: RED }} />
-                  {point}
-                </span>
-              ))}
-            </motion.div>
-          )}
-        </motion.div>
-
-        {/* Right: image */}
-        <motion.div
-          initial={{ opacity: 0, scale: reduce ? 1 : 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto w-full max-w-md lg:col-span-6 lg:max-w-none"
-        >
-          <div className="relative mx-auto w-[82%] max-w-[460px] lg:ml-auto lg:mr-6">
-            {/* Offset outline */}
-            <div
-              aria-hidden
-              className="absolute inset-0 -translate-x-4 translate-y-4 rounded-[2.5rem] rounded-tl-[999px] border-2"
-              style={{ borderColor: GREEN }}
-            />
-            <div
-              className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] rounded-tl-[999px] shadow-2xl"
-              style={{
-                backgroundColor: 'white',
-                boxShadow: `0 25px 60px -12px rgba(75, 98, 74, 0.25)`,
-              }}
+            {/* Clear Headline */}
+            <motion.h1
+              variants={item}
+              className="mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] font-bold tracking-tight text-[#0F3D5E] leading-[1.12]"
             >
-              <img
-                src={hero.imageUrl}
-                alt={brand.name}
-                className="h-full w-full object-cover object-center"
-              />
-            </div>
+              Reliable Washing Machine &amp; Microwave Repair at Your Doorstep
+            </motion.h1>
 
-            {/* Handwritten-style note card */}
+            {/* Crisp 2-line Subtitle */}
+            <motion.p
+              variants={item}
+              className="mt-4 max-w-xl text-base sm:text-lg leading-relaxed text-zinc-600 font-normal"
+            >
+              Fast diagnosis, genuine spare parts, and doorstep service for all major appliance brands across Sector 85 and Gurugram.
+            </motion.p>
+
+            {/* Two Action-Oriented Buttons */}
             <motion.div
-              initial={{ opacity: 0, y: reduce ? 0 : 16, rotate: -3 }}
-              animate={{ opacity: 1, y: 0, rotate: -3 }}
-              transition={{ duration: 0.7, delay: 0.9, ease: easeCubic }}
-              className="absolute -bottom-6 left-0 sm:left-2 max-w-[15rem] rounded-2xl bg-white p-4 shadow-xl"
-              style={{ border: '1px solid rgba(75, 98, 74, 0.06)' }}
+              variants={item}
+              className="mt-7 flex flex-wrap items-center gap-3 sm:gap-4"
             >
-              <div className="flex items-start gap-3">
-                <span
-                  className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl"
-                  style={{ backgroundColor: `${RED}15`, color: RED }}
+              {/* Primary: Call Now */}
+              <a
+                href={`tel:${phone.replace(/\s/g, '')}`}
+                className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#0F3D5E] px-6 py-3.5 text-sm sm:text-base font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#0A2940] hover:-translate-y-0.5 hover:shadow-md active:translate-y-0"
+              >
+                <Phone className="size-4.5" />
+                <span>Call Now: +91 73577 64559</span>
+              </a>
+
+              {/* Secondary: WhatsApp for Service */}
+              <a
+                href={`https://wa.me/${clientData.contact.whatsappNumber}?text=${encodeURIComponent(
+                  'Hi Nikunj Wash Care, I would like to book a doorstep repair service for my washing machine / microwave.'
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2.5 rounded-xl border border-black/[0.1] bg-white px-5 py-3.5 text-sm sm:text-base font-semibold text-zinc-800 shadow-2xs transition-all duration-200 hover:bg-zinc-50 hover:border-zinc-300 hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  className="size-5 text-emerald-600"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   aria-hidden
                 >
-                  {/* Heart icon */}
-                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z" />
-                  </svg>
+                  <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+                  <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+                </svg>
+                <span>WhatsApp Us</span>
+              </a>
+
+              {/* Quick Book Link */}
+              <a
+                href="#contact"
+                className="text-sm font-semibold text-[#E05638] underline-offset-4 hover:underline py-2 sm:py-0"
+              >
+                Book a Repair →
+              </a>
+            </motion.div>
+
+            {/* Clean Trust Proof Bar (Single row, zero clutter) */}
+            <motion.div
+              variants={item}
+              className="mt-8 pt-6 border-t border-black/[0.08] flex flex-wrap items-center gap-x-6 gap-y-2.5 text-xs sm:text-sm text-zinc-600 font-medium"
+            >
+              <div className="flex items-center gap-1.5">
+                <span className="flex text-amber-500">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="size-3.5 fill-amber-400 text-amber-400" />
+                  ))}
                 </span>
-                <div>
-                  <p className="text-sm font-bold" style={{ color: GREEN }}>{hero.note?.title || 'You will be heard'}</p>
-                  <p className="mt-0.5 text-sm leading-snug" style={{ color: `${GREEN}99` }}>
-                    {hero.note?.text || 'Every visit starts with a real conversation.'}
-                  </p>
-                </div>
+                <span className="font-bold text-zinc-900">4.9 / 5.0</span>
+                <span>(1,500+ Homes)</span>
+              </div>
+              
+              <span className="text-zinc-300 hidden sm:inline">•</span>
+              
+              <div className="flex items-center gap-1.5 text-zinc-700">
+                <ShieldCheck className="size-4 text-emerald-600" />
+                <span>100% Genuine Parts</span>
+              </div>
+
+              <span className="text-zinc-300 hidden sm:inline">•</span>
+
+              <div className="flex items-center gap-1.5 text-zinc-700">
+                <Clock className="size-4 text-sky-600" />
+                <span>Same-Day Visits</span>
               </div>
             </motion.div>
-          </div>
-        </motion.div>
+          </motion.div>
+
+          {/* ========================================================= */}
+          {/* RIGHT: High-End Pristine Appliance Visual Showcase        */}
+          {/* ========================================================= */}
+          <motion.div
+            initial={{ opacity: 0, scale: reduce ? 1 : 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: easeCubic }}
+            className="relative lg:col-span-5"
+          >
+            <div className="relative mx-auto max-w-[440px] lg:max-w-none">
+              
+              {/* Premium Image Card */}
+              <div className="relative overflow-hidden rounded-[28px] sm:rounded-[32px] border border-black/[0.08] bg-white p-2.5 sm:p-3 shadow-[0_20px_50px_rgba(15,61,94,0.12)]">
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[20px] sm:rounded-[24px] bg-zinc-100">
+                  <img
+                    src="/hero-appliances.jpg"
+                    alt="Nikunj Wash Care - Washing Machine and Microwave Specialists"
+                    className="size-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+              </div>
+
+              {/* Floating Badge (Bottom Right): Clean Signature Badge */}
+              <div className="absolute -bottom-3 sm:-bottom-4 right-3 sm:right-5 rounded-2xl bg-white px-5 sm:px-6 py-3.5 shadow-xl border border-black/[0.06] backdrop-blur-md">
+                <p className="font-bold text-sm sm:text-base text-[#0F3D5E] leading-tight">
+                  Nikunj Wash Care
+                </p>
+                <p className="text-xs text-zinc-500 mt-1 font-medium leading-tight">
+                  Appliance Repair Specialists
+                </p>
+              </div>
+
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

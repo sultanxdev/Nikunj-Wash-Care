@@ -86,7 +86,7 @@ export default function Contact() {
         style={{ backgroundColor: ACCENT }}
       />
 
-      <div className="relative z-10 mx-auto max-w-7xl">
+      <div className="relative z-10 mx-auto max-w-[1200px]">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-14">
           
           {/* Left: Contact Info */}

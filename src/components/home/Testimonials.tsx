@@ -36,7 +36,7 @@ export default function Testimonials() {
         style={{ backgroundColor: RED }}
       />
 
-      <div className="relative z-10 mx-auto max-w-7xl">
+      <div className="relative z-10 mx-auto max-w-[1200px]">
         {/* Header */}
         <div className="mb-12 sm:mb-16 text-center max-w-2xl mx-auto">
           <motion.div
