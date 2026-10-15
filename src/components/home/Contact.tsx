@@ -39,7 +39,7 @@ export default function Contact() {
     },
     {
       icon: MapPin,
-      label: 'Visit the clinic',
+      label: 'Our Location / Workshop',
       value: contact.address,
       href: mapUrl,
       action: 'Get directions',
@@ -47,8 +47,8 @@ export default function Contact() {
     },
     {
       icon: Clock,
-      label: 'Consultation hours',
-      value: contact.workingHours || 'Mon – Sat: 10:00 AM – 7:00 PM',
+      label: 'Service & Booking Hours',
+      value: contact.workingHours || 'Mon – Sun: 8:00 AM – 9:00 PM',
     },
     {
       icon: Mail,
@@ -115,7 +115,7 @@ export default function Contact() {
               className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.12] tracking-tight"
               style={{ color: PRIMARY }}
             >
-              Let&rsquo;s talk about your skin
+              Reliable Repair at Your Doorstep
             </motion.h2>
 
             <motion.p
@@ -123,8 +123,7 @@ export default function Contact() {
               className="mt-4 text-base sm:text-lg leading-relaxed max-w-md"
               style={{ color: `${PRIMARY}CC` }}
             >
-              Tell us what is bothering you, whether it is medical or cosmetic. Our team will guide you
-              to the right doctor consultation.
+              Looking for washing machine or microwave repair in Gurugram? Contact Nikunj Wash Care for appliance repair assistance and doorstep service.
             </motion.p>
 
             <ul className="mt-8 sm:mt-10 divide-y border-y" style={{ borderColor: `${PRIMARY}15` }}>

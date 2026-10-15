@@ -77,7 +77,7 @@ export const metadata: Metadata = {
         url: seo.ogImage,
         width: 1200,
         height: 630,
-        alt: `${brand.name} — Expert Dermatology Clinic`,
+        alt: `${brand.name} — Washing Machine & Microwave Repair Gurugram`,
       },
     ],
   },

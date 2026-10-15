@@ -193,10 +193,10 @@ export default function BookingForm() {
           )}
         </div>
 
-        {/* Treatment Select */}
+        {/* Treatment / Service Select */}
         <div>
           <label className="block text-xs sm:text-sm font-medium mb-1.5" style={{ color: PRIMARY }}>
-            Treatment / Concern <span style={{ color: ACCENT }}>*</span>
+            Appliance / Service Required <span style={{ color: ACCENT }}>*</span>
           </label>
           <select
             {...register("treatment")}
@@ -208,7 +208,7 @@ export default function BookingForm() {
             }}
             disabled={loading}
           >
-            <option value="">Select Treatment Concern</option>
+            <option value="">Select Service / Appliance</option>
             {treatments.map((t) => (
               <option key={t.id} value={t.name}>
                 {t.name}
@@ -260,11 +260,11 @@ export default function BookingForm() {
         {/* Additional Message */}
         <div>
           <label className="block text-xs sm:text-sm font-medium mb-1.5" style={{ color: PRIMARY }}>
-            Additional Notes (Optional)
+            Address & Problem Details (Optional)
           </label>
           <textarea
             {...register("message")}
-            placeholder="Tell us any symptoms, past treatments, or queries..."
+            placeholder="Describe the issue (e.g. machine not draining, microwave not heating) and your address in Gurugram..."
             rows={3}
             className="w-full px-4 py-3 rounded-xl text-sm sm:text-base transition-all outline-none resize-none"
             style={{
@@ -296,7 +296,7 @@ export default function BookingForm() {
             </>
           ) : (
             <>
-              Confirm Consultation Request
+              Confirm Repair Request
               <svg className="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />

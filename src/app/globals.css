@@ -15,14 +15,14 @@
 
 /* ─── Brand Palette ───────────────────────────────────────── */
 :root {
-  --primary: #4B624A;
-  --primaryHover: #3A4E39;
-  --accent: #E64435;
-  --background: #F5F6F0;
-  --textMain: #4B624A;
-  --textMuted: #4B624A;
+  --primary: #0F3D5E;
+  --primaryHover: #0A2940;
+  --accent: #E05638;
+  --background: #F5F8FA;
+  --textMain: #0F3D5E;
+  --textMuted: #475569;
   --surface: #FFFFFF;
-  --surface-muted: #F5F6F0;
+  --surface-muted: #F5F8FA;
 }
 
 /* ─── Base ────────────────────────────────────────────────── */
@@ -50,8 +50,8 @@ body {
 }
 
 ::selection {
-  background-color: #4B624A;
-  color: #F5F6F0;
+  background-color: #0F3D5E;
+  color: #F5F8FA;
 }
 
 /* ─── Custom Scrollbar ────────────────────────────────────── */

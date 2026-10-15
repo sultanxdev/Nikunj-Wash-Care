@@ -97,54 +97,46 @@ export default function Hero() {
 
           <motion.div variants={item} className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
             <a
-              href="#contact"
-              className="rounded-xl px-8 py-4 text-center text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+              href={`tel:${phone?.replace(/\s/g, '') || ''}`}
+              className="rounded-xl px-7 py-4 text-center text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 flex items-center justify-center gap-2.5"
               style={{
                 backgroundColor: GREEN,
                 color: CREAM,
                 outlineColor: GREEN,
               }}
             >
-              {hero.ctaText}
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
+              </svg>
+              {hero.ctaText || "Call Now"}
             </a>
 
-            {phone ? (
-              <a
-                href={`tel:${phone.replace(/\s/g, '')}`}
-                className="group flex items-center justify-center gap-3 rounded-xl px-4 py-3 text-lg font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
-                style={{ color: GREEN, outlineColor: GREEN }}
-              >
-                <span
-                  className="flex h-11 w-11 items-center justify-center rounded-xl shadow-sm transition group-hover:scale-105"
-                  style={{
-                    backgroundColor: 'white',
-                    border: '1px solid rgba(75, 98, 74, 0.1)',
-                  }}
-                >
-                  {/* Phone icon */}
-                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke={GREEN} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
-                  </svg>
-                </span>
-                <span className="flex flex-col text-left leading-tight">
-                  <span className="text-sm" style={{ color: `${GREEN}99` }}>Prefer to talk?</span>
-                  <span className="font-semibold">{phone}</span>
-                </span>
-              </a>
-            ) : (
-              <a
-                href="#services"
-                className="rounded-xl px-8 py-4 text-center text-lg font-medium shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
-                style={{
-                  backgroundColor: 'white',
-                  color: GREEN,
-                  border: '1px solid rgba(75, 98, 74, 0.1)',
-                  outlineColor: GREEN,
-                }}
-              >
-                Explore treatments
-              </a>
-            )}
+            <a
+              href={`https://wa.me/${clientData.contact.whatsappNumber}?text=${encodeURIComponent("Hi Nikunj Wash Care, I would like to inquire about washing machine / microwave repair service.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl px-6 py-4 text-center text-lg font-semibold shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow flex items-center justify-center gap-2.5"
+              style={{
+                backgroundColor: 'white',
+                color: GREEN,
+                border: '1px solid rgba(15, 61, 94, 0.15)',
+                outlineColor: GREEN,
+              }}
+            >
+              <svg viewBox="0 0 24 24" className="h-5 w-5 text-emerald-600" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+                <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+              </svg>
+              {hero.secondaryCtaText || "WhatsApp for Service"}
+            </a>
+
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center py-2 text-base font-semibold underline-offset-4 hover:underline"
+              style={{ color: RED }}
+            >
+              {hero.bookCtaText || "Book a Repair"} →
+            </a>
           </motion.div>
 
           {/* Social proof */}
@@ -169,6 +161,26 @@ export default function Hero() {
                   <p className="text-sm" style={{ color: `${GREEN}99` }}>{hero.patientCount}</p>
                 )}
               </div>
+            </motion.div>
+          )}
+
+          {/* Key Selling Points from Posters */}
+          {clientData.sellingPoints && clientData.sellingPoints.length > 0 && (
+            <motion.div variants={item} className="mt-8 flex flex-wrap gap-2">
+              {clientData.sellingPoints.map((point: string, i: number) => (
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium shadow-xs backdrop-blur-xs"
+                  style={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.85)',
+                    color: GREEN,
+                    border: '1px solid rgba(15, 61, 94, 0.12)',
+                  }}
+                >
+                  <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ backgroundColor: RED }} />
+                  {point}
+                </span>
+              ))}
             </motion.div>
           )}
         </motion.div>

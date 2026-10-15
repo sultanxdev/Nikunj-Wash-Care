@@ -54,7 +54,7 @@ export default function AboutDoctor() {
             >
               <img
                 src={imageUrl}
-                alt={name ? `Portrait of ${name}` : 'Portrait of the doctor'}
+                alt={name ? `${name} - Appliance Repair` : 'Nikunj Wash Care Technician'}
                 className="h-full w-full object-cover object-top"
               />
             </div>
@@ -78,7 +78,7 @@ export default function AboutDoctor() {
               className="inline-block rounded-lg px-3 py-1 text-xs font-semibold uppercase tracking-wider"
               style={{ backgroundColor: `${GREEN}10`, color: GREEN }}
             >
-              About the Doctor
+              About Our Service
             </span>
           </motion.div>
 

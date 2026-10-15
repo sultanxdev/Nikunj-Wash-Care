@@ -67,11 +67,10 @@ export default function Services() {
               className="mt-4 font-serif text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl"
               style={{ color: GREEN }}
             >
-              Skin treatments, explained in plain words
+              Reliable Appliance Repair Services
             </h2>
             <p className="mt-6 max-w-md text-base leading-relaxed sm:text-lg" style={{ color: `${GREEN}99` }}>
-              Every skin is different. We look at yours first, then suggest only what it needs,
-              with medical expertise behind every step.
+              From washing machine vibrations and drum issues to microwave heating faults, our technicians provide quick diagnosis and reliable doorstep repairs.
             </p>
 
             <div className="mt-8 flex flex-col gap-4">
@@ -84,11 +83,10 @@ export default function Services() {
                   outlineColor: GREEN,
                 }}
               >
-                Book a consultation
+                Book a Repair
               </a>
               <p className="max-w-xs text-sm leading-relaxed" style={{ color: `${GREEN}80` }}>
-                Not sure which treatment fits? Tell us your concern and we will point you in
-                the right direction.
+                Need urgent assistance in Sector 85 or nearby? Contact us directly for same-day doorstep service.
               </p>
             </div>
           </motion.div>
@@ -132,9 +130,20 @@ export default function Services() {
                     >
                       {service.title}
                     </h3>
-                    <p className="mt-2 flex-grow text-sm leading-relaxed sm:mt-3 sm:text-base" style={{ color: `${GREEN}99` }}>
+                    <p className="mt-2 text-sm leading-relaxed sm:mt-3 sm:text-base" style={{ color: `${GREEN}99` }}>
                       {service.description}
                     </p>
+
+                    {Boolean('features' in service && Array.isArray(service.features)) && (
+                      <ul className="mt-4 mb-2 space-y-1.5 flex-grow">
+                        {service.features.map((feat: string, idx: number) => (
+                          <li key={idx} className="flex items-center gap-2 text-xs sm:text-sm" style={{ color: `${GREEN}CC` }}>
+                            <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ backgroundColor: RED }} />
+                            <span>{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
 
                     <div className="mt-5 flex flex-col gap-3 border-t pt-4 sm:mt-7 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:pt-5" style={{ borderColor: `${GREEN}10` }}>
                       <WhatsAppCTA

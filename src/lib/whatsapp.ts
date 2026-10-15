@@ -16,25 +16,25 @@ export interface WhatsAppBookingData {
  */
 export const whatsappMessages = {
   // General inquiry
-  general: "Hi Doctor, I want to know more about your services.",
+  general: "Hi Nikunj Wash Care, I want to know more about your appliance repair services.",
   
-  // Treatment-specific (add more as needed)
+  // Service-specific
   treatments: {
-    acne: "Hi Doctor, I'm interested in acne treatment. Can you tell me more?",
-    pigmentation: "Hi Doctor, I want to consult about pigmentation treatment.",
-    "anti-age": "Hi Doctor, I'm interested in anti-aging services.",
-    "skin-booster": "Hi Doctor, Tell me more about skin booster treatments.",
-    "chemical-peels": "Hi Doctor, I want to know about chemical peels.",
-    "laser-hair": "Hi Doctor, I'm interested in laser hair reduction.",
-    "hair-fall": "Hi Doctor, I want consultation for hair fall treatment.",
-    consultation: "Hi Doctor, I want to book a consultation.",
+    "washing-machine": "Hi Nikunj Wash Care, I need repair service for my washing machine.",
+    microwave: "Hi Nikunj Wash Care, I need repair service for my microwave.",
+    "wm-troubleshooting": "Hi Nikunj Wash Care, my washing machine has an issue and needs troubleshooting.",
+    "mw-troubleshooting": "Hi Nikunj Wash Care, my microwave is not working properly and needs repair.",
+    maintenance: "Hi Nikunj Wash Care, I want to schedule appliance maintenance.",
+    "doorstep-service": "Hi Nikunj Wash Care, I would like to book a doorstep inspection.",
+    "diagnosis-inspection": "Hi Nikunj Wash Care, I want to book a doorstep diagnosis.",
+    "genuine-parts": "Hi Nikunj Wash Care, I need genuine spare parts and service for my appliance.",
   },
   
   // FAQ inquiry
-  faq: "Hi Doctor, I have a question about your services.",
+  faq: "Hi Nikunj Wash Care, I have a question about your repair services.",
   
   // Post-booking
-  booking: "Hi Doctor, I just submitted a booking request.",
+  booking: "Hi Nikunj Wash Care, I just submitted a repair booking request.",
 };
 
 /**
@@ -61,11 +61,11 @@ export const getTreatmentMessage = (treatmentId: string): string => {
  * Generate WhatsApp message from booking data
  */
 export const generateWhatsAppMessage = (data: WhatsAppBookingData): string => {
-  let message = `Hi Doctor, I would like to book an appointment.\n\n`;
+  let message = `Hi Nikunj Wash Care, I would like to book an appliance repair service.\n\n`;
   
   message += `📋 *Details:*\n`;
   message += `Name: ${data.name}\n`;
-  message += `Treatment: ${data.treatment}\n`;
+  message += `Service: ${data.treatment}\n`;
   
   if (data.preferredDate) {
     message += `Preferred Date: ${data.preferredDate}\n`;
@@ -76,7 +76,7 @@ export const generateWhatsAppMessage = (data: WhatsAppBookingData): string => {
   }
   
   if (data.message) {
-    message += `\nAdditional Info:\n${data.message}\n`;
+    message += `\nAddress / Issue Details:\n${data.message}\n`;
   }
   
   message += `\nThank you!`;

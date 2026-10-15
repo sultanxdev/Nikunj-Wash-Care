@@ -130,17 +130,17 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm" style={{ color: `${PRIMARY}CC` }}>
               <li>
                 <Link href="#services" className="transition-colors hover:text-[#E64435]">
-                  Treatments
+                  Services
                 </Link>
               </li>
               <li>
                 <Link href="#about" className="transition-colors hover:text-[#E64435]">
-                  About Doctor
+                  About Us
                 </Link>
               </li>
               <li>
                 <Link href="#testimonials" className="transition-colors hover:text-[#E64435]">
-                  Patient Reviews
+                  Customer Reviews
                 </Link>
               </li>
               <li>
@@ -217,12 +217,12 @@ export default function Footer() {
           }}
         >
           <p>© {currentYear} {brand.name}. All rights reserved.</p>
-          <p>Built for clinics, with human oversight on every conversation.</p>
+          <p>Reliable doorstep washing machine & microwave repair service in Gurugram.</p>
         </div>
 
         {/* Wordmark: same left and right edges as everything above it */}
         <div className="select-none pb-6 pt-4 sm:pb-8" style={{ color: PRIMARY }}>
-          <TextHoverEffect text={brand.logoText || "DERMOAI"} />
+          <TextHoverEffect text={brand.logoText || "NIKUNJ"} />
         </div>
       </div>
     </footer>

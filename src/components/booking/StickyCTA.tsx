@@ -20,7 +20,7 @@ export default function StickyCTA() {
 
   const handleWhatsApp = () => {
     trackWhatsAppClick("Sticky WhatsApp");
-    const message = `Hi ${clientData.brand.name}, I would like to book a consultation.`;
+    const message = `Hi ${clientData.brand.name}, I would like to book an appliance repair service.`;
     const encodedMessage = encodeURIComponent(message);
     const phone = contact.whatsappNumber;
     window.open(`https://wa.me/${phone}?text=${encodedMessage}`, "_blank");

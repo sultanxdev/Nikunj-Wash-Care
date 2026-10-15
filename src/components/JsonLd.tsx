@@ -22,10 +22,10 @@ export default function JsonLd() {
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
-      // ── MedicalBusiness (the clinic) ──────────────────────
+      // ── LocalBusiness (Appliance Repair Service) ─────────
       {
-        '@type': ['MedicalBusiness', 'Dermatology'],
-        '@id': `${seo.siteUrl}/#clinic`,
+        '@type': ['LocalBusiness'],
+        '@id': `${seo.siteUrl}/#business`,
         name: brand.name,
         description: seo.metaDescription,
         url: seo.siteUrl,
@@ -34,14 +34,17 @@ export default function JsonLd() {
         address: {
           '@type': 'PostalAddress',
           streetAddress: contact.address,
+          addressLocality: contact.city,
+          addressRegion: contact.state,
+          postalCode: contact.pincode,
           addressCountry: 'IN',
         },
         openingHoursSpecification: [
           {
             '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-            opens: '10:00',
-            closes: '19:00',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            opens: '08:00',
+            closes: '21:00',
           },
         ],
         image: `${seo.siteUrl}${aboutDoctor.imageUrl}`,
@@ -68,19 +71,18 @@ export default function JsonLd() {
         hasMap: `https://maps.google.com/?q=${encodeURIComponent(contact.address)}`,
         employee: [
           {
-            '@type': 'Physician',
-            '@id': `${seo.siteUrl}/#doctor`,
+            '@type': 'Person',
+            '@id': `${seo.siteUrl}/#technician`,
             name: aboutDoctor.name,
             description: aboutDoctor.bioParagraphs.join(' '),
-            qualifications: aboutDoctor.credentials,
+            jobTitle: aboutDoctor.role,
             image: `${seo.siteUrl}${aboutDoctor.imageUrl}`,
-            worksFor: { '@id': `${seo.siteUrl}/#clinic` },
-            medicalSpecialty: 'Dermatology',
+            worksFor: { '@id': `${seo.siteUrl}/#business` },
           },
         ],
         // Services offered
         availableService: services.map((s) => ({
-          '@type': 'MedicalProcedure',
+          '@type': 'Service',
           name: s.title,
           description: s.description,
         })),

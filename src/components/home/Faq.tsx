@@ -57,7 +57,7 @@ export default function Faq() {
             className="max-w-xl mx-auto text-base sm:text-lg leading-relaxed"
             style={{ color: `${PRIMARY}CC` }}
           >
-            Everything you need to know about our treatments, booking, and doctor consultations.
+            Everything you need to know about our repair services, booking, and doorstep visits.
           </p>
         </div>
 
@@ -136,7 +136,7 @@ export default function Faq() {
               className="font-semibold underline underline-offset-4 transition-colors"
               style={{ color: ACCENT }}
             >
-              Ask our doctor directly
+              Contact us directly
             </a>
           </p>
         </div>

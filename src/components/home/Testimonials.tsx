@@ -50,14 +50,14 @@ export default function Testimonials() {
               style={{ backgroundColor: 'rgba(245, 246, 240, 0.15)', color: CREAM }}
             >
               <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: RED }} />
-              Patient Stories
+              Customer Reviews
             </span>
 
             <h2
               className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4"
               style={{ color: CREAM }}
             >
-              What our patients say
+              What our customers say
             </h2>
 
             {items.length > 0 && (
