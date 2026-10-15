@@ -66,7 +66,7 @@ export const clientData = {
       { value: "Genuine", label: "Spare Parts" },
     ],
     ctaText: "Book a Repair",
-    imageUrl: "/washing-machine-poster.jpg",
+    imageUrl: "/hero-appliances.jpg",
   },
 
   // ── 4. CONTACT & LOCATION DETAILS ──────────────────────────
@@ -123,7 +123,7 @@ export const clientData = {
     ctaText: "Call Now",
     secondaryCtaText: "WhatsApp for Service",
     bookCtaText: "Book a Repair",
-    imageUrl: "/hero-appliances.jpg",
+    imageUrl: "https://images.openai.com/static-rsc-4/TvdBoy1sABPXlFk0N6LJhWg-qux-PPX1Dw08gw9ob6Yg1mF4RR2wQGWiEoZ7cXycYP09mJsh2wYH1UecVssKAa5ZVz8UFEJ9hlKqgXlliJRRefUDUfil8rboUBuAXjX5LEsYtHZusQT2OFgocc87VbCg5fLua2T0JVDX9p87PSE?purpose=inline",
     badge: "Doorstep Service • Sector 85, Gurugram",
     rating: 4.9,
     patientCount: "1,500+ satisfied homeowners",

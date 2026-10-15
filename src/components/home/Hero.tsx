@@ -84,17 +84,17 @@ export default function Hero() {
               Fast diagnosis, genuine spare parts, and doorstep service for all major appliance brands across Sector 85 and Gurugram.
             </motion.p>
 
-            {/* Two Action-Oriented Buttons */}
+            {/* Action-Oriented Buttons (Cleanly aligned for mobile & desktop) */}
             <motion.div
               variants={item}
-              className="mt-7 flex flex-wrap items-center gap-3 sm:gap-4"
+              className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4"
             >
               {/* Primary: Call Now */}
               <a
                 href={`tel:${phone.replace(/\s/g, '')}`}
-                className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#0F3D5E] px-6 py-3.5 text-sm sm:text-base font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#0A2940] hover:-translate-y-0.5 hover:shadow-md active:translate-y-0"
+                className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#0F3D5E] px-6 py-3.5 text-sm sm:text-base font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#0A2940] hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 text-center"
               >
-                <Phone className="size-4.5" />
+                <Phone className="size-4.5 shrink-0" />
                 <span>Call Now: +91 73577 64559</span>
               </a>
 
@@ -105,11 +105,11 @@ export default function Hero() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 rounded-xl border border-black/[0.1] bg-white px-5 py-3.5 text-sm sm:text-base font-semibold text-zinc-800 shadow-2xs transition-all duration-200 hover:bg-zinc-50 hover:border-zinc-300 hover:-translate-y-0.5 active:translate-y-0"
+                className="inline-flex items-center justify-center gap-2.5 rounded-xl border border-black/[0.12] bg-white px-6 py-3.5 text-sm sm:text-base font-semibold text-zinc-800 shadow-2xs transition-all duration-200 hover:bg-zinc-50 hover:border-zinc-300 hover:-translate-y-0.5 active:translate-y-0 text-center"
               >
                 <svg
                   viewBox="0 0 24 24"
-                  className="size-5 text-emerald-600"
+                  className="size-5 text-emerald-600 shrink-0"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -122,42 +122,34 @@ export default function Hero() {
                 </svg>
                 <span>WhatsApp Us</span>
               </a>
-
-              {/* Quick Book Link */}
-              <a
-                href="#contact"
-                className="text-sm font-semibold text-[#E05638] underline-offset-4 hover:underline py-2 sm:py-0"
-              >
-                Book a Repair →
-              </a>
             </motion.div>
 
-            {/* Clean Trust Proof Bar (Single row, zero clutter) */}
+            {/* Clean Trust Proof Bar (Pulled up nicely, zero awkward wrap) */}
             <motion.div
               variants={item}
-              className="mt-8 pt-6 border-t border-black/[0.08] flex flex-wrap items-center gap-x-6 gap-y-2.5 text-xs sm:text-sm text-zinc-600 font-medium"
+              className="mt-5 pt-4 sm:mt-6 sm:pt-5 border-t border-black/[0.08] flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm text-zinc-600 font-medium"
             >
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1.5 shrink-0">
                 <span className="flex text-amber-500">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="size-3.5 fill-amber-400 text-amber-400" />
                   ))}
                 </span>
                 <span className="font-bold text-zinc-900">4.9 / 5.0</span>
-                <span>(1,500+ Homes)</span>
+                <span className="text-zinc-500">(1,500+ Homes)</span>
               </div>
               
               <span className="text-zinc-300 hidden sm:inline">•</span>
               
-              <div className="flex items-center gap-1.5 text-zinc-700">
-                <ShieldCheck className="size-4 text-emerald-600" />
+              <div className="flex items-center gap-1.5 text-zinc-700 shrink-0">
+                <ShieldCheck className="size-4 text-emerald-600 shrink-0" />
                 <span>100% Genuine Parts</span>
               </div>
 
               <span className="text-zinc-300 hidden sm:inline">•</span>
 
-              <div className="flex items-center gap-1.5 text-zinc-700">
-                <Clock className="size-4 text-sky-600" />
+              <div className="flex items-center gap-1.5 text-zinc-700 shrink-0">
+                <Clock className="size-4 text-sky-600 shrink-0" />
                 <span>Same-Day Visits</span>
               </div>
             </motion.div>
